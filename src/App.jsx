@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import { ToastContainer, toast } from 'react-toastify';
 import './App.css';
 import { nanoid } from 'nanoid';
 import Form from './components/Form';
@@ -31,11 +32,13 @@ function App() {
     const newItems = [...items, newItem];
     setItems(newItems);
     localStorageSetup(newItems);
+    toast.success('item added to the list');
   };
   const removeList = (listId) => {
     const removeItems = items.filter((item) => item.id !== listId);
     setItems(removeItems);
     localStorageSetup(removeItems);
+    toast.success('item deleted successfully');
   };
 
   const editList = (listId) => {
@@ -51,6 +54,7 @@ function App() {
   };
   return (
     <section className="section-center shadow-lg ">
+      <ToastContainer position="top-center" />
       <Form addItem={addItem} />
       <List items={items} removeList={removeList} editList={editList} />
     </section>
