@@ -18,7 +18,12 @@ const SingleList = ({ item, removeList }) => {
       </p>
       <div className="btn-container d-flex ">
         <button className="btn btn-warning edit-btn">Edit</button>
-        <button className="btn btn-danger remove-btn">Delete</button>
+        <button
+          className="btn btn-danger remove-btn"
+          onClick={() => removeList(item.id)}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
