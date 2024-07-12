@@ -27,5 +27,18 @@ h4 {
   display: inline-block;
   padding: 0.375rem 0.75rem;
 }
-.form-input-values {
+
+.single-item {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.single-item p {
+  margin-top: 10px;
+}
+
+.edit-btn {
+  margin-right: 20px;
 }
