@@ -16,9 +16,11 @@ function App() {
     };
     setItems([...items, newItem]);
   };
+  const removeList = (listId) => {};
   return (
     <section className="section-center shadow-lg ">
       <Form addItem={addItem} />
+      <List items={items} removeList={removeList} />
     </section>
   );
 }

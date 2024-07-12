@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import SingleList from './SingleList';
 
-const List = () => {
+const List = ({ items, removeList }) => {
   return (
     <div className="bg-white mt-5">
-      <h2>List</h2>
+      {items.map((item) => {
+        return <SingleList key={item.id} item={item} removeList={removeList} />;
+      })}
     </div>
   );
 };
