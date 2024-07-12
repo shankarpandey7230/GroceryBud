@@ -1,15 +1,29 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import React, { useState } from 'react';
 
 const Form = () => {
+  const [newItemName, setNewItemName] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(newItemName);
+  };
   return (
-    <div className="form-container p-4">
-      <h2 className="text-center">Grocery Bud</h2>
-      <div className="form-value d-flex justify-content-center mt-5 px-3 flex-grow">
-        <input type="text" placeholder="Enter your grocery" />
-        <button className="btn btn-info btn-mine">Add Item</button>
+    <form onSubmit={handleSubmit}>
+      <h4 className="text-center text-capitalize p-5">grocery bud</h4>
+      <div className=" form-input-values d-flex justify-content-center ">
+        <input
+          type="text"
+          className="form-input w-75"
+          value={newItemName}
+          onChange={(event) => setNewItemName(event.target.value)}
+        />
+        <button
+          className="btn btn-info text-capitalize p-2 pe-auto"
+          type="submit"
+        >
+          add item
+        </button>
       </div>
-    </div>
+    </form>
   );
 };
 
